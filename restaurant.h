@@ -1,7 +1,9 @@
 #pragma once
 #include<vector>
 #include"guests.h"
-#define MaxCapacity 20		//每张桌子最多能容纳的人数
+#define MaxCapacity 10		//每张桌子最多能容纳的人数
+#define MaxTableNum 5		//每种桌子最多数目
+
 using namespace std;
 
 //enum Status {
@@ -86,7 +88,7 @@ public:
 	//找到被占用桌子中最先被释放的桌子
 	Table* latestTable() {
 		Table* latest = NULL;
-		for (int i = 1; i < MaxCapacity; i++) {
+		for (int i = 1; i <= MaxCapacity; i++) {
 			if (busyTables[i].size()) {
 				if (latest == NULL)
 					latest = busyTables[i][0];

@@ -192,10 +192,10 @@ public:
 
 	//输出顾客信息
 	void customerInfo(ofstream &outputFile) {
-		outputFile << setw(4) << setfill('0') << ID << '\t';
+		outputFile << setw(3) << setfill('0') << ID << '\t';
 		outputFile << personNum << '\t';
 		outputFile << arriveTime->Time2str() << '\t';
-		outputFile << "0:" << setw(2) << setfill('0') << waitTime << '\t';
+		outputFile << waitTime / 60 << ":" << setw(2) << setfill('0') << waitTime % 60 << '\t';
 		outputFile << settleDown->Time2str() << '\t';
 		outputFile << "0:" << setw(2) << setfill('0') << eatTime << '\t';
 		outputFile << leaveTime->Time2str() << endl;
